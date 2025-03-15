@@ -79,19 +79,25 @@ export const PlasmicProductCard__VariantProps = new Array<VariantPropType>(
   "unnamedGroupOfVariants"
 );
 
-export type PlasmicProductCard__ArgsType = {};
+export type PlasmicProductCard__ArgsType = {
+  children?: React.ReactNode;
+  slot?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicProductCard__ArgsType;
-export const PlasmicProductCard__ArgProps = new Array<ArgPropType>();
+export const PlasmicProductCard__ArgProps = new Array<ArgPropType>(
+  "children",
+  "slot"
+);
 
 export type PlasmicProductCard__OverridesType = {
   root?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
   img?: Flex__<typeof PlasmicImg__>;
   h3?: Flex__<"h3">;
-  text?: Flex__<"div">;
 };
 
 export interface DefaultProductCardProps {
+  children?: React.ReactNode;
+  slot?: React.ReactNode;
   unnamedGroupOfVariants?: SingleChoiceArg<"unnamedVariant">;
   className?: string;
 }
@@ -172,11 +178,7 @@ function PlasmicProductCard__RenderFunc(props: {
         sty.root
       )}
     >
-      <div
-        data-plasmic-name={"freeBox"}
-        data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox)}
-      >
+      <div className={classNames(projectcss.all, sty.freeBox__d6thE)}>
         <PlasmicImg__
           data-plasmic-name={"img"}
           data-plasmic-override={overrides.img}
@@ -202,29 +204,21 @@ function PlasmicProductCard__RenderFunc(props: {
         <h3
           data-plasmic-name={"h3"}
           data-plasmic-override={overrides.h3}
-          className={classNames(
-            projectcss.all,
-            projectcss.h3,
-            projectcss.__wab_text,
-            sty.h3
-          )}
+          className={classNames(projectcss.all, projectcss.h3, sty.h3)}
         >
-          {hasVariant(globalVariants, "screen", "mobileOnly")
-            ? "Lorem ipsum dolor sit amet"
-            : "Step 1:"}
+          {renderPlasmicSlot({
+            defaultContents: "Step 1:",
+            value: args.children,
+            className: classNames(sty.slotTargetChildren)
+          })}
         </h3>
-        <div
-          data-plasmic-name={"text"}
-          data-plasmic-override={overrides.text}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text
-          )}
-        >
-          {hasVariant(globalVariants, "screen", "mobileOnly")
-            ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            : "he AI instantly flags DARVO, gaslighting,  guilt-tripping and much more in live conversations."}
+        <div className={classNames(projectcss.all, sty.freeBox__qepTk)}>
+          {renderPlasmicSlot({
+            defaultContents:
+              "he AI instantly flags DARVO, gaslighting,  guilt-tripping and much more in live conversations.",
+            value: args.slot,
+            className: classNames(sty.slotTargetSlot)
+          })}
         </div>
       </div>
     </div>
@@ -232,21 +226,17 @@ function PlasmicProductCard__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "img", "h3", "text"],
-  freeBox: ["freeBox", "img", "h3", "text"],
+  root: ["root", "img", "h3"],
   img: ["img"],
-  h3: ["h3"],
-  text: ["text"]
+  h3: ["h3"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
   img: typeof PlasmicImg__;
   h3: "h3";
-  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -309,10 +299,8 @@ export const PlasmicProductCard = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
     img: makeNodeComponent("img"),
     h3: makeNodeComponent("h3"),
-    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicProductCard
     internalVariantProps: PlasmicProductCard__VariantProps,

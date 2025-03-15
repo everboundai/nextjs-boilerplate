@@ -249,11 +249,27 @@ function PlasmicPriceCard__RenderFunc(props: {
             }
           )}
         >
-          {hasVariant($state, "borders", "flatRight")
-            ? "Enterprise"
-            : hasVariant($state, "borders", "flatLeft")
-            ? "Free"
-            : "Pro"}
+          {hasVariant($state, "borders", "flatRight") ? (
+            "Enterprise"
+          ) : hasVariant($state, "borders", "flatLeft") ? (
+            "Basic"
+          ) : (
+            <React.Fragment>
+              {(() => {
+                try {
+                  return undefined;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return "Free";
+                  }
+                  throw e;
+                }
+              })()}
+            </React.Fragment>
+          )}
         </h4>
         <div
           className={classNames(

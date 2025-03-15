@@ -68,11 +68,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: hvnx4UaRLT5bKWhR7H1S1X/projectcss
 import sty from "./PlasmicFooterSection.module.css"; // plasmic-import: ysDKnOH-1O7Y/css
 
-import FacebookSvgIcon from "./icons/PlasmicIcon__FacebookSvg"; // plasmic-import: VALQMCD_ZkI3/icon
-import TwitterSvgIcon from "./icons/PlasmicIcon__TwitterSvg"; // plasmic-import: IhcXsguw_IVP/icon
-import InstagramSvgIcon from "./icons/PlasmicIcon__InstagramSvg"; // plasmic-import: VEib8r5KKrC1/icon
-import LinkedinSvgIcon from "./icons/PlasmicIcon__LinkedinSvg"; // plasmic-import: EFwSOmiw9tNY/icon
-
 createPlasmicElementProxy;
 
 export type PlasmicFooterSection__VariantMembers = {};
@@ -168,39 +163,6 @@ function PlasmicFooterSection__RenderFunc(props: {
                 data-plasmic-override={overrides.logo}
                 className={classNames("__wab_instance", sty.logo)}
               />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___5WDsY
-                )}
-              >
-                {
-                  "Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor"
-                }
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__rbn9Q)}>
-                <FacebookSvgIcon
-                  className={classNames(projectcss.all, sty.svg__zvr8P)}
-                  role={"img"}
-                />
-
-                <TwitterSvgIcon
-                  className={classNames(projectcss.all, sty.svg__c62U2)}
-                  role={"img"}
-                />
-
-                <InstagramSvgIcon
-                  className={classNames(projectcss.all, sty.svg__gn0UU)}
-                  role={"img"}
-                />
-
-                <LinkedinSvgIcon
-                  className={classNames(projectcss.all, sty.svg__wuPk)}
-                  role={"img"}
-                />
-              </div>
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.column__yLYa2)}>

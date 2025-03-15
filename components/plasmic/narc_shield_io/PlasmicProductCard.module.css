@@ -6,7 +6,7 @@
   max-width: 544px;
   max-height: 563px;
 }
-.freeBox {
+.freeBox__d6thE {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -21,7 +21,7 @@
   padding: 103px 68px 106px;
 }
 @media (min-width: 0px) and (max-width: 930px) {
-  .freeBox {
+  .freeBox__d6thE {
     padding: 50px 40px;
   }
 }
@@ -44,25 +44,32 @@
   height: auto;
   max-width: 364px;
   padding-top: 52px;
+  display: flex;
+  flex-direction: row;
   min-width: 0;
 }
 @media (min-width: 0px) and (max-width: 930px) {
-  .h3 {
+  .slotTargetChildren {
     font-size: 22px;
   }
 }
-.text {
+.freeBox__qepTk {
   position: relative;
   width: 100%;
   height: auto;
   max-width: 409px;
   padding-top: 32px;
-  font-size: 18px;
-  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
   min-width: 0;
 }
+.slotTargetSlot {
+  font-size: 18px;
+  text-align: center;
+}
 @media (min-width: 0px) and (max-width: 930px) {
-  .text {
+  .slotTargetSlot {
     font-size: 18px;
   }
 }

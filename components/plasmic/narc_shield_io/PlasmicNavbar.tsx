@@ -222,7 +222,7 @@ function PlasmicNavbar__RenderFunc(props: {
                 sty.text___1RkT
               )}
             >
-              {"How it Work"}
+              {"How it Works"}
             </div>
           </PlasmicLink__>
           <PlasmicLink__

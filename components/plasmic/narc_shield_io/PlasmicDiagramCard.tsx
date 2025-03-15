@@ -59,8 +59,6 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { useScreenVariants as useScreenVariantstUatpkyEh71C } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: TUatpkyEh71C/globalVariant
-
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: hvnx4UaRLT5bKWhR7H1S1X/projectcss
@@ -73,18 +71,24 @@ export type PlasmicDiagramCard__VariantsArgs = {};
 type VariantPropType = keyof PlasmicDiagramCard__VariantsArgs;
 export const PlasmicDiagramCard__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicDiagramCard__ArgsType = {};
+export type PlasmicDiagramCard__ArgsType = {
+  children?: React.ReactNode;
+  slot?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicDiagramCard__ArgsType;
-export const PlasmicDiagramCard__ArgProps = new Array<ArgPropType>();
+export const PlasmicDiagramCard__ArgProps = new Array<ArgPropType>(
+  "children",
+  "slot"
+);
 
 export type PlasmicDiagramCard__OverridesType = {
   root?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
   h5?: Flex__<"h5">;
-  text?: Flex__<"div">;
 };
 
 export interface DefaultDiagramCardProps {
+  children?: React.ReactNode;
+  slot?: React.ReactNode;
   className?: string;
 }
 
@@ -126,10 +130,6 @@ function PlasmicDiagramCard__RenderFunc(props: {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantstUatpkyEh71C()
-  });
-
   return (
     <div
       data-plasmic-name={"root"}
@@ -145,37 +145,24 @@ function PlasmicDiagramCard__RenderFunc(props: {
         sty.root
       )}
     >
-      <div
-        data-plasmic-name={"freeBox"}
-        data-plasmic-override={overrides.freeBox}
-        className={classNames(projectcss.all, sty.freeBox)}
-      >
+      <div className={classNames(projectcss.all, sty.freeBox__lnSHo)}>
         <h5
           data-plasmic-name={"h5"}
           data-plasmic-override={overrides.h5}
-          className={classNames(
-            projectcss.all,
-            projectcss.h5,
-            projectcss.__wab_text,
-            sty.h5
-          )}
+          className={classNames(projectcss.all, projectcss.h5, sty.h5)}
         >
-          {hasVariant(globalVariants, "screen", "mobileOnly")
-            ? "Lorem Ipsum"
-            : "Written Communication"}
+          {renderPlasmicSlot({
+            defaultContents: "Written Communication",
+            value: args.children,
+            className: classNames(sty.slotTargetChildren)
+          })}
         </h5>
-        <div
-          data-plasmic-name={"text"}
-          data-plasmic-override={overrides.text}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text
-          )}
-        >
-          {hasVariant(globalVariants, "screen", "mobileOnly")
-            ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed "
-            : "Text Messages | Email | Voice Transcripts"}
+        <div className={classNames(projectcss.all, sty.freeBox__jqrPt)}>
+          {renderPlasmicSlot({
+            defaultContents: "Text Messages | Email | Voice Transcripts",
+            value: args.slot,
+            className: classNames(sty.slotTargetSlot)
+          })}
         </div>
       </div>
     </div>
@@ -183,19 +170,15 @@ function PlasmicDiagramCard__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "h5", "text"],
-  freeBox: ["freeBox", "h5", "text"],
-  h5: ["h5"],
-  text: ["text"]
+  root: ["root", "h5"],
+  h5: ["h5"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
   h5: "h5";
-  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -258,9 +241,7 @@ export const PlasmicDiagramCard = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
     h5: makeNodeComponent("h5"),
-    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicDiagramCard
     internalVariantProps: PlasmicDiagramCard__VariantProps,

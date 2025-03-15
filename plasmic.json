@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -227,7 +227,8 @@
           "componentImportPath": "@plasmicpkgs/react-aria/skinny/registerDialog"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "hvnx4UaRLT5bKWhR7H1S1X",
@@ -377,6 +378,19 @@
             "modulePath": "Button.tsx"
           },
           "cssFilePath": "plasmic/narc_shield_io/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "7IZkslRD14gG",
+          "name": "Emailcard",
+          "type": "managed",
+          "projectId": "hvnx4UaRLT5bKWhR7H1S1X",
+          "renderModuleFilePath": "plasmic/narc_shield_io/PlasmicEmailcard.tsx",
+          "importSpec": {
+            "modulePath": "Emailcard.tsx"
+          },
+          "cssFilePath": "plasmic/narc_shield_io/PlasmicEmailcard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -623,6 +637,36 @@
           "id": "FuW6Z14W6VyX",
           "name": "galleri2-1.png",
           "filePath": "../public/plasmic/narc_shield_io/images/galleri21Png.png"
+        },
+        {
+          "id": "upAPFNQSMXho",
+          "name": "heroimage.jpg",
+          "filePath": "../public/plasmic/narc_shield_io/images/heroimageJpg.jpg"
+        },
+        {
+          "id": "689EFZN2jNI_",
+          "name": "transparent_logo.png",
+          "filePath": "../public/plasmic/narc_shield_io/images/transparentLogoPng.png"
+        },
+        {
+          "id": "VlozFfeAHKNo",
+          "name": "shieldlogo.webp",
+          "filePath": "../public/plasmic/narc_shield_io/images/shieldlogoWebp.webp"
+        },
+        {
+          "id": "vdA5yLODs9wz",
+          "name": "hero2.jpg",
+          "filePath": "../public/plasmic/narc_shield_io/images/hero2Jpg.jpg"
+        },
+        {
+          "id": "6PgTE4G-efTg",
+          "name": "communication1.jpg",
+          "filePath": "../public/plasmic/narc_shield_io/images/communication1Jpg.jpg"
+        },
+        {
+          "id": "_3z1dY7rFAFK",
+          "name": "final_evaluation.jpg",
+          "filePath": "../public/plasmic/narc_shield_io/images/finalEvaluationJpg.jpg"
         }
       ],
       "indirect": false,

@@ -62,10 +62,7 @@ import {
 import Navbar from "../../Navbar"; // plasmic-import: XJhz53-ESI52/component
 import Button from "../../Button"; // plasmic-import: ifGm70vZk4tf/component
 import Section from "../../Section"; // plasmic-import: RyGCztqFJq1Y/component
-import DiagramCard from "../../DiagramCard"; // plasmic-import: bZa85eOwTpAI/component
 import ProductCard from "../../ProductCard"; // plasmic-import: 4HarEn2m8J0n/component
-import DetailAbout from "../../DetailAbout"; // plasmic-import: fjwImTvMU27o/component
-import PriceSection from "../../PriceSection"; // plasmic-import: JPjHh0Ym_f5I/component
 import PriceCard from "../../PriceCard"; // plasmic-import: bU66GMCZcccC/component
 import FooterSection from "../../FooterSection"; // plasmic-import: ysDKnOH-1O7Y/component
 
@@ -87,9 +84,19 @@ export type PlasmicHomepage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
 export const PlasmicHomepage__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicHomepage__ArgsType = {};
+export type PlasmicHomepage__ArgsType = {
+  slot2?: React.ReactNode;
+  slot?: React.ReactNode;
+  slot4?: React.ReactNode;
+  slot3?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicHomepage__ArgsType;
-export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
+export const PlasmicHomepage__ArgProps = new Array<ArgPropType>(
+  "slot2",
+  "slot",
+  "slot4",
+  "slot3"
+);
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
@@ -102,7 +109,6 @@ export type PlasmicHomepage__OverridesType = {
   productSection?: Flex__<typeof Section>;
   step1?: Flex__<typeof ProductCard>;
   aboutSection?: Flex__<typeof Section>;
-  priceSection?: Flex__<typeof PriceSection>;
   startSection?: Flex__<typeof Section>;
   h3?: Flex__<"h3">;
   pricingSection?: Flex__<typeof Section>;
@@ -222,7 +228,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? "Analytics for developers can be better"
+                      ? "Meet the AI That Detects & Counters Gaslighting, DARVO, & Manipulation\u2014In Real Time."
                       : "Meet the AI That Detects & Counters Gaslighting, DARVO, & Manipulation\u2014In Real Time."}
                   </h1>
                   <div
@@ -233,7 +239,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                      ? "\u2714 Detects Emotional Manipulation Instantly \u2192 Know when someone is Gaslighting or DARVO-ing you.\n\u2714 Provides Real-Time Counter-Responses \u2192 Learn how to shut it down.\n\u2714 Breaks the Cycle of Confusion & Guilt \u2192 Stop second-guessing yourself.\n"
                       : "\u2714 Detects Emotional Manipulation Instantly \u2192 Know when someone is Gaslighting or DARVO-ing you.\n\u2714 Provides Real-Time Counter-Responses \u2192 Learn how to shut it down.\n\u2714 Breaks the Cycle of Confusion & Guilt \u2192 Stop second-guessing yourself."}
                   </div>
                   <Stack__
@@ -316,7 +322,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     className={classNames(sty.img__yEyd6)}
                     displayHeight={"auto"}
                     displayMaxHeight={"none"}
-                    displayMaxWidth={"none"}
+                    displayMaxWidth={"716px"}
                     displayMinHeight={"0"}
                     displayMinWidth={
                       hasVariant(globalVariants, "screen", "mobileOnly")
@@ -330,10 +336,10 @@ function PlasmicHomepage__RenderFunc(props: {
                     }
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/narc_shield_io/images/diagramSvg.svg",
-                      fullWidth: 173,
-                      fullHeight: 150,
-                      aspectRatio: 1.151631
+                      src: "/plasmic/narc_shield_io/images/heroimageJpg.jpg",
+                      fullWidth: 759,
+                      fullHeight: 326,
+                      aspectRatio: undefined
                     }}
                   />
                 </div>
@@ -346,47 +352,11 @@ function PlasmicHomepage__RenderFunc(props: {
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobileOnly")
-                  ? "Powering with magnificant of Companies"
+                  ? "Powered with OpenAI ChatGPT models, but not affiliated or endorsed by OpenAI"
                   : "Powered with OpenAI ChatGPT models, but not affiliated or endorsed by OpenAI"}
               </div>
             </div>
           </Stack__>
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__bvfdC)}
-            displayHeight={"auto"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"774px"}
-            loading={"lazy"}
-            src={{
-              src: "/plasmic/narc_shield_io/images/ellipseLeftPng.png",
-              fullWidth: 469,
-              fullHeight: 742,
-              aspectRatio: undefined
-            }}
-          />
-
-          <PlasmicImg__
-            alt={""}
-            className={classNames(sty.img__fsqo4)}
-            displayHeight={"auto"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"100%"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"auto"}
-            loading={"lazy"}
-            src={{
-              src: "/plasmic/narc_shield_io/images/ellipseRightPng.png",
-              fullWidth: 437,
-              fullHeight: 742,
-              aspectRatio: undefined
-            }}
-          />
-
           <Section
             data-plasmic-name={"diagramSection"}
             data-plasmic-override={overrides.diagramSection}
@@ -423,126 +393,34 @@ function PlasmicHomepage__RenderFunc(props: {
               </div>
               <PlasmicImg__
                 alt={""}
-                className={classNames(sty.img__gGiVy)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={
-                  hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "249px"
-                    : "100%"
-                }
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/narc_shield_io/images/terminalPng.png",
-                  fullWidth: 624,
-                  fullHeight: 333,
-                  aspectRatio: undefined
-                }}
-              />
-
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img___8TUje)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"100%"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "auto"
-                    : "auto"
-                }
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/narc_shield_io/images/line1Png.png",
-                  fullWidth: 11,
-                  fullHeight: 150,
-                  aspectRatio: undefined
-                }}
-              />
-
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__mswSd)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={
-                  hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? "50px"
-                    : "100%"
-                }
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                loading={"lazy"}
-                src={{
-                  src: "/plasmic/narc_shield_io/images/lineBranchPng.png",
-                  fullWidth: 100,
-                  fullHeight: 100,
-                  aspectRatio: undefined
-                }}
-              />
-
-              <PlasmicImg__
-                alt={""}
                 className={classNames(sty.img__zdzbl)}
                 displayHeight={
                   hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "auto"
-                    : "auto"
+                    : "416px"
                 }
                 displayMaxHeight={"none"}
                 displayMaxWidth={
                   hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "500px"
-                    : "770px"
+                    : "1101px"
                 }
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={
                   hasVariant(globalVariants, "screen", "mobileOnly")
                     ? "auto"
-                    : "auto"
+                    : "100%"
                 }
                 loading={"lazy"}
                 src={{
-                  src: "/plasmic/narc_shield_io/images/line2Png.png",
-                  fullWidth: 844,
-                  fullHeight: 284,
+                  src: "/plasmic/narc_shield_io/images/hero2Jpg.jpg",
+                  fullWidth: 772,
+                  fullHeight: 287,
                   aspectRatio: undefined
                 }}
               />
 
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox___9Xhmt)}
-              >
-                <DiagramCard
-                  className={classNames(
-                    "__wab_instance",
-                    sty.diagramCard__zz6S7
-                  )}
-                />
-
-                <DiagramCard
-                  className={classNames(
-                    "__wab_instance",
-                    sty.diagramCard__l6NhP
-                  )}
-                />
-
-                <DiagramCard
-                  className={classNames(
-                    "__wab_instance",
-                    sty.diagramCard__dAXdb
-                  )}
-                />
-              </Stack__>
               <h2
                 className={classNames(
                   projectcss.all,
@@ -561,11 +439,29 @@ function PlasmicHomepage__RenderFunc(props: {
                 )}
               >
                 {
-                  "NarcShield AI will learn your particular communication needs and identify problematic methods in both manipulation towards you and strategies we naturally employ that might not ultimately be in our best interest. Send your messages across all written formats and mediums to receive real time assistance!"
+                  "NarcShield AI is your live, real time assistant. Copy and paste in the messages you receive for it to break down and analyze the manipulation, exposing it in real time. It will then generate responses that are safe, sound, and protective."
                 }
               </div>
             </div>
           </Section>
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img__c4KMu)}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"1296px"}
+            loading={"lazy"}
+            src={{
+              src: "/plasmic/narc_shield_io/images/communication1Jpg.jpg",
+              fullWidth: 748,
+              fullHeight: 379,
+              aspectRatio: undefined
+            }}
+          />
+
           <Section
             data-plasmic-name={"deviceSection"}
             data-plasmic-override={overrides.deviceSection}
@@ -598,28 +494,25 @@ function PlasmicHomepage__RenderFunc(props: {
                 ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \neiusmod tempor incididunt ut labore et dolore magna aliqua."
                 : '\ud83e\udd2f "If you\u2019ve ever walked away from a conversation feeling confused, guilty, or like the \u2018bad guy\u2019\u2026 You\u2019ve been DARVO\u2019d."\n\n\ud83d\udd25 "Emotional manipulators use DARVO, gaslighting, and blame-shifting to control the narrative\u2014until now."\n\n\ud83d\ude80 "NarcShield.io is the first AI built to recognize manipulation in real-time and train you to break the cycle."'}
             </div>
-            <PlasmicImg__
-              alt={""}
-              className={classNames(sty.img__fk7Qe)}
-              displayHeight={"484px"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={
-                hasVariant(globalVariants, "screen", "mobileOnly")
-                  ? "360px"
-                  : "100%"
-              }
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"776px"}
-              loading={"lazy"}
-              src={{
-                src: "/plasmic/narc_shield_io/images/macbookPng.png",
-                fullWidth: 900,
-                fullHeight: 565,
-                aspectRatio: undefined
-              }}
-            />
           </Section>
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img___9Xknj)}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"1196px"}
+            loading={"lazy"}
+            src={{
+              src: "/plasmic/narc_shield_io/images/finalEvaluationJpg.jpg",
+              fullWidth: 763,
+              fullHeight: 577,
+              aspectRatio: undefined
+            }}
+          />
+
           <Section
             data-plasmic-name={"productSection"}
             data-plasmic-override={overrides.productSection}
@@ -687,14 +580,29 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-name={"step1"}
                   data-plasmic-override={overrides.step1}
                   className={classNames("__wab_instance", sty.step1)}
-                />
-
+                  slot={
+                    "Does the conversation not feel right? Copy and paste the messages you've received for it to break down problematic communication and give you clarity and safe responses."
+                  }
+                >
+                  {"Option 1: Real Time Assistance"}
+                </ProductCard>
                 <ProductCard
                   className={classNames(
                     "__wab_instance",
                     sty.productCard__dRyD
                   )}
-                />
+                  slot={renderPlasmicSlot({
+                    defaultContents:
+                      "It can break down a log of text messages to evaluate for problematic communication and provide analysis with tagging, grading your responses, and giving strategies for next time.",
+                    value: args.slot
+                  })}
+                >
+                  {renderPlasmicSlot({
+                    defaultContents:
+                      "Option 2: Analysis after the conversation ",
+                    value: args.slot2
+                  })}
+                </ProductCard>
               </Stack__>
               <Stack__
                 as={"div"}
@@ -706,14 +614,57 @@ function PlasmicHomepage__RenderFunc(props: {
                     "__wab_instance",
                     sty.productCard__ehifI
                   )}
-                />
-
+                  slot={renderPlasmicSlot({
+                    defaultContents:
+                      "NarcShield.io can handle long emails, breaking them down for even the most subtle signs of covert manipulation to expose the tactics and give you scripts to respond with.",
+                    value: args.slot4
+                  })}
+                >
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__rNeMb)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__gH2Lr
+                      )}
+                    >
+                      {"Option 3: Emails and Long Form Messages"}
+                    </div>
+                  </div>
+                </ProductCard>
                 <ProductCard
                   className={classNames(
                     "__wab_instance",
                     sty.productCard__mX40
                   )}
-                />
+                  slot={
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___8VQm7
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__rslRt
+                        )}
+                      >
+                        {
+                          "Upload or copy and paste a voice to speech transcript and it can evaluate conversations to expose manipulation and generate responses and scripts for next time."
+                        }
+                      </div>
+                    </div>
+                  }
+                >
+                  {renderPlasmicSlot({
+                    defaultContents: "Option 4: Transcripts and conversations",
+                    value: args.slot3
+                  })}
+                </ProductCard>
               </Stack__>
             </div>
           </Section>
@@ -739,7 +690,7 @@ function PlasmicHomepage__RenderFunc(props: {
               >
                 {hasVariant(globalVariants, "screen", "mobileOnly")
                   ? "What people say \nabout us"
-                  : "What people say about us"}
+                  : "Your Data Is Private"}
               </h2>
               <div className={classNames(projectcss.all, sty.freeBox__bGv)}>
                 <div className={classNames(projectcss.all, sty.freeBox__r8NbY)}>
@@ -758,9 +709,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     displayWidth={"auto"}
                     loading={"lazy"}
                     src={{
-                      src: "/plasmic/narc_shield_io/images/aboutImgPng.png",
-                      fullWidth: 400,
-                      fullHeight: 500,
+                      src: "/plasmic/narc_shield_io/images/shieldlogoWebp.webp",
+                      fullWidth: 1792,
+                      fullHeight: 1024,
                       aspectRatio: undefined
                     }}
                   />
@@ -774,66 +725,8 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.h2__xxhjg
                     )}
                   >
-                    {"Michael Justin"}
+                    {"NarcShield.io will not see your messages."}
                   </h2>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___0Y6AM)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__xdOnI)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"auto"}
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/narc_shield_io/images/aboutIpsumPng.png",
-                        fullWidth: 152,
-                        fullHeight: 40,
-                        aspectRatio: undefined
-                      }}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__g9L6G
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "CEO Company"
-                        : "CEO Company"}
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__yTuc2)}
-                  >
-                    <PlasmicImg__
-                      alt={""}
-                      className={classNames(sty.img__e9NMn)}
-                      displayHeight={"auto"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"100%"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={
-                        hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? "auto"
-                          : "auto"
-                      }
-                      loading={"lazy"}
-                      src={{
-                        src: "/plasmic/narc_shield_io/images/backtipPng.png",
-                        fullWidth: 34,
-                        fullHeight: 32,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
                   <div
                     className={classNames(
                       projectcss.all,
@@ -841,64 +734,39 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__alMuy
                     )}
                   >
-                    {hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                      : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+                    {hasVariant(globalVariants, "screen", "mobileOnly") ? (
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    ) : (
+                      <React.Fragment>
+                        <React.Fragment>
+                          {
+                            "NarcShield.io staff have absolutely no access to your messages at any time. OpenAI, the creators of chatGPT which powers NarcShield.io may have select authorized staff and representatives review messages in accordance with the OpenAI usage policy found "
+                          }
+                        </React.Fragment>
+                        {
+                          <PlasmicLink__
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.a,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.link__futdT
+                            )}
+                            component={Link}
+                            href={
+                              "https://help.openai.com/en/articles/7039943-data-usage-for-consumer-services-faq"
+                            }
+                            platform={"nextjs"}
+                          >
+                            {"here"}
+                          </PlasmicLink__>
+                        }
+                        <React.Fragment>{"."}</React.Fragment>
+                      </React.Fragment>
+                    )}
                   </div>
                 </div>
               </div>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__b8WU)}
-              >
-                <DetailAbout
-                  className={classNames(
-                    "__wab_instance",
-                    sty.detailAbout__giGIf
-                  )}
-                />
-
-                <DetailAbout
-                  className={classNames(
-                    "__wab_instance",
-                    sty.detailAbout___7Ibsr
-                  )}
-                />
-
-                <DetailAbout
-                  className={classNames(
-                    "__wab_instance",
-                    sty.detailAbout__tTblN
-                  )}
-                />
-              </Stack__>
-              <Stack__
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__ozWik)}
-              >
-                <DetailAbout
-                  className={classNames(
-                    "__wab_instance",
-                    sty.detailAbout__rUFeJ
-                  )}
-                />
-
-                <DetailAbout
-                  className={classNames(
-                    "__wab_instance",
-                    sty.detailAbout__lTd9S
-                  )}
-                />
-
-                <DetailAbout
-                  className={classNames(
-                    "__wab_instance",
-                    sty.detailAbout__f6FLo
-                  )}
-                />
-              </Stack__>
               <PlasmicImg__
                 alt={""}
                 className={classNames(sty.img__dma5C)}
@@ -936,12 +804,6 @@ function PlasmicHomepage__RenderFunc(props: {
               />
             </div>
           </Section>
-          <PriceSection
-            data-plasmic-name={"priceSection"}
-            data-plasmic-override={overrides.priceSection}
-            className={classNames("__wab_instance", sty.priceSection)}
-          />
-
           <Section
             data-plasmic-name={"startSection"}
             data-plasmic-override={overrides.startSection}
@@ -981,7 +843,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   >
                     {hasVariant(globalVariants, "screen", "mobileOnly")
                       ? "Start using our product today"
-                      : "Start using our product today"}
+                      : "Start using NarcShield.io today"}
                   </h3>
                   <div
                     className={classNames(
@@ -992,7 +854,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   >
                     {hasVariant(globalVariants, "screen", "mobileOnly")
                       ? "Faster than free analytics tools. Access to all your data, with respect to the privacy of your users."
-                      : "Faster than free analytics tools. Access to all your data, with respect to the privacy of your users."}
+                      : "Get real time support detecting maniuplation like DARVO and gaslighting, blame shifting, guilt tripping and more. "}
                   </div>
                 </div>
                 <div className={classNames(projectcss.all, sty.column__ef38Z)}>
@@ -1110,7 +972,6 @@ const PlasmicDescendants = {
     "productSection",
     "step1",
     "aboutSection",
-    "priceSection",
     "startSection",
     "h3",
     "pricingSection",
@@ -1125,7 +986,6 @@ const PlasmicDescendants = {
   productSection: ["productSection", "step1"],
   step1: ["step1"],
   aboutSection: ["aboutSection"],
-  priceSection: ["priceSection"],
   startSection: ["startSection", "h3"],
   h3: ["h3"],
   pricingSection: ["pricingSection"],
@@ -1145,7 +1005,6 @@ type NodeDefaultElementType = {
   productSection: typeof Section;
   step1: typeof ProductCard;
   aboutSection: typeof Section;
-  priceSection: typeof PriceSection;
   startSection: typeof Section;
   h3: "h3";
   pricingSection: typeof Section;
@@ -1221,7 +1080,6 @@ export const PlasmicHomepage = Object.assign(
     productSection: makeNodeComponent("productSection"),
     step1: makeNodeComponent("step1"),
     aboutSection: makeNodeComponent("aboutSection"),
-    priceSection: makeNodeComponent("priceSection"),
     startSection: makeNodeComponent("startSection"),
     h3: makeNodeComponent("h3"),
     pricingSection: makeNodeComponent("pricingSection"),
